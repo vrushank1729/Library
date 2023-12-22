@@ -1,0 +1,34 @@
+body {
+    background-color: black;
+    font-family: sans-serif;
+    color: white;
+}
+
+.library-title {
+    text-align: center;
+    height: 25vh;
+}
+
+.add-book-btn {
+    margin-bottom: 10px;
+}
+
+.title {
+    width: 40vw;
+}
+
+.author {
+    width: 40vw;
+}
+
+.page-count {
+    width: 10vw;
+}
+
+.completed {
+    width: 10vw;
+}
+
+.remove {
+    width: 10vw;
+}

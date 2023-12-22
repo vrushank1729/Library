@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Library</title>
+</head>
+<body>
+    <h1 class="library-title">Library</h1>
+    <button class="add-book-btn">Add Book</button>
+    <!-- Dialogs and Modals : Web Dev Simplified article -->
+    <dialog>
+        <form method="dialog">
+            <div>
+                <label>Book Title</label>
+                <input type="text" id="inputTitle" required/>
+            </div>
+            <div>
+                <label>Author</label>
+                <input type="text" id="inputAuthor" required/>
+            </div>
+            <div>
+                <label>Page Count</label>
+                <input type="number" id="inputPageCount" required/>
+            </div>
+            <div>
+                <label>Completed</label>
+                <input type="text" id="inputCompleted" required/>
+            </div>
+            
+            <button type="submit" id="submit-book-btn">Submit</button>
+        </form>
+    </dialog>
+    <table id="Table">
+        <tr>
+            <td class="title">Title</td>
+            <td class="author">Author</td>
+            <td class="page-count">Page Count</td>
+            <td class="completed">Completed</td>
+            <td class="remove">Remove</td>
+        </tr>
+    </table>
+</body>
+</html>
