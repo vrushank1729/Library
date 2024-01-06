@@ -32,3 +32,7 @@ body {
 .remove {
     width: 10vw;
 }
+
+.remove-btn {
+    width: 80px;
+}
