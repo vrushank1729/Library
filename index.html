@@ -26,8 +26,10 @@
                 <input type="number" id="inputPageCount" min="1" pattern="\d+" title="Please enter a positive integer." required/>
             </div>
             <div>
-                <label>Completed</label>
-                <input type="text" id="inputCompleted" required/>
+                <input type="radio" id="read-radio-btn" name="reading_status" value="Read">
+                <label>Read</label><br>
+                <input type="radio" id="notRead-radio-btn" name="reading_status" value="Not Read" checked>
+                <label>Not Read</label><br>
             </div>
             
             <button type="submit" id="submit-book-btn">Submit</button>
@@ -45,35 +47,35 @@
             <td class="title">The Great Gatsby</td>
             <td class="author">F.Scott Fitzgerald</td>
             <td class="page-count">190</td>
-            <td class="completed">Completed</td>
+            <td class="completed"><button class="reading-status-btn">Read</button></td>
             <td class="remove"><button class="remove-btn">Remove</button></td>
         </tr>
         <tr>
             <td class="title">The Picture of Dorian Grey</td>
             <td class="author">Oscar Wilde</td>
             <td class="page-count">256</td>
-            <td class="completed">Completed</td>
+            <td class="completed"><button class="reading-status-btn">Read</button></td>
             <td class="remove"><button class="remove-btn">Remove</button></td>
         </tr>
         <tr>
             <td class="title">Romeo and Juliet</td>
             <td class="author">William Shakespeare</td>
             <td class="page-count">92</td>
-            <td class="completed">Completed</td>
+            <td class="completed"><button class="reading-status-btn">Read</button></td>
             <td class="remove"><button class="remove-btn">Remove</button></td>
         </tr>
         <tr>
             <td class="title">Brave New World</td>
             <td class="author">Aldous Huxley</td>
             <td class="page-count">268</td>
-            <td class="completed">NO</td>
+            <td class="completed"><button class="reading-status-btn">Not Read</button></td>
             <td class="remove"><button class="remove-btn">Remove</button></td>
         </tr>
         <tr>
             <td class="title">Crime and Punishment</td>
             <td class="author">Fyodor Dostoyevsky</td>
             <td class="page-count">720</td>
-            <td class="completed">Completed</td>
+            <td class="completed"><button class="reading-status-btn">Not Read</button></td>
             <td class="remove"><button class="remove-btn">Remove</button></td>
         </tr>
     </table>

@@ -21,10 +21,18 @@ function addBookToLibrary() {
     dialog.showModal()
   })
 
-  table.addEventListener('click', (event) => {  // Bard Trick, existing vs newly added elements with event listeners
+  table.addEventListener('click', (event) => {  // Existing vs newly added elements with event listeners
     if (event.target.matches('.remove-btn')) {
       const row = event.target.closest('tr');
       row.remove();
+    }
+
+    if(event.target.matches('.reading-status-btn')) {
+      if(event.target.textContent === 'Read') {
+        event.target.textContent = 'Not Read'
+      } else if(event.target.textContent === 'Not Read') {
+        event.target.textContent = 'Read'
+      }
     }
   });
 
@@ -34,7 +42,11 @@ function addBookToLibrary() {
     let title = document.getElementById('inputTitle').value
     let author = document.getElementById('inputAuthor').value
     let pageCount = document.getElementById('inputPageCount').value
-    let completed = document.getElementById('inputCompleted').value
+    if(document.getElementById('read-radio-btn').checked) {
+      var completed = document.getElementById('read-radio-btn').value
+    }else if(document.getElementById('notRead-radio-btn').checked) {
+      var completed = document.getElementById('notRead-radio-btn').value
+    }
 
     let book = new Book(title, author, pageCount, completed)
     myLibrary.push(book)
@@ -44,7 +56,8 @@ function addBookToLibrary() {
     let title_td = document.createElement('td')
     let author_td = document.createElement('td')
     let pageCount_td = document.createElement('td')
-    let completed_td = document.createElement('td')
+    let completedBtn = document.createElement('button')
+    let completedBtn_td = document.createElement('td')
     let removeBtn = document.createElement('button')
     let removeBtn_td = document.createElement('td')
 
@@ -54,8 +67,9 @@ function addBookToLibrary() {
     title_td.classList.add('author')
     pageCount_td.textContent = pageCount
     pageCount_td.classList.add('page-count')
-    completed_td.textContent = completed
-    completed_td.classList.add('completed')
+    completedBtn.textContent = completed
+    completedBtn.classList.add('reading-status-btn')
+    completedBtn_td.classList.add('completed')
     removeBtn.textContent = 'Remove'
     removeBtn.classList.add('remove-btn')
     removeBtn_td.classList.add('remove')
@@ -63,7 +77,8 @@ function addBookToLibrary() {
     tr.appendChild(title_td)
     tr.appendChild(author_td)
     tr.appendChild(pageCount_td)
-    tr.appendChild(completed_td)
+    completedBtn_td.appendChild(completedBtn)
+    tr.appendChild(completedBtn_td)
     removeBtn_td.appendChild(removeBtn)
     tr.appendChild(removeBtn_td)
     table.appendChild(tr)
